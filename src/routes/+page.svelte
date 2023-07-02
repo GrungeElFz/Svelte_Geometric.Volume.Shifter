@@ -11,7 +11,9 @@
 			<Threlte.OrbitControls />
 		</Threlte.PerspectiveCamera>
 
-		<Threlte.AmbientLight color="white" />
+		<Threlte.AmbientLight color="white" intensity={0.2} />
+
+		<Threlte.DirectionalLight color="white" intensity={2} />
 
 		<Threlte.Mesh
 			geometry={new Three.SphereGeometry(4, 64, 64)}
