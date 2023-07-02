@@ -13,13 +13,22 @@
 
 		<!-- Lights -->
 		<Threlte.AmbientLight color="white" intensity={0.2} />
-		<Threlte.DirectionalLight color="white" intensity={2} position={{ x: 10, y: 20 }} />
+		<Threlte.DirectionalLight
+			color="white"
+			intensity={2}
+			position={{ x: 10, y: 20 }}
+			shadow={{
+				camera: { top: 10 }
+			}}
+		/>
 
 		<!-- Object -->
 		<Threlte.Mesh
 			geometry={new Three.SphereGeometry(4, 64, 64)}
 			material={new Three.MeshStandardMaterial({ color: 'white' })}
 			position={{ y: 4 }}
+			receiveShadow
+			castShadow
 		/>
 
 		<!-- Floor -->
