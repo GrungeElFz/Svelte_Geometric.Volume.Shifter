@@ -8,7 +8,7 @@
 	<Threlte.Canvas>
 		<!-- Camera -->
 		<Threlte.PerspectiveCamera position={{ x: 20, y: 20, z: 20 }} fov={50}>
-			<Threlte.OrbitControls />
+			<Threlte.OrbitControls autoRotate />
 		</Threlte.PerspectiveCamera>
 
 		<!-- Lights -->
