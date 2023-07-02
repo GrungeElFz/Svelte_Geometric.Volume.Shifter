@@ -19,6 +19,17 @@
 			geometry={new Three.SphereGeometry(4, 64, 64)}
 			material={new Three.MeshStandardMaterial({ color: 'white' })}
 		/>
+
+		<!-- Floor -->
+		<Threlte.Mesh
+			geometry={new Three.PlaneGeometry(20, 20)}
+			material={new Three.MeshStandardMaterial({
+				color: 'white',
+				side: Three.DoubleSide
+			})}
+			rotation={{ x: Utils.DEG2RAD * 90 }}
+			receiveShadow
+		/>
 	</Threlte.Canvas>
 
 	<!-- Background -->
