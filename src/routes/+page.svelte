@@ -1,2 +1,23 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="scene">
+	<slot />
+</div>
+
+<style>
+	.scene {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		inset: 0;
+		background: #3494e6; /* Fallback for old browsers */
+		background: -webkit-linear-gradient(
+			to right,
+			#ec6ead,
+			#3494e6
+		); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(
+			to right,
+			#ec6ead,
+			#3494e6
+		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+</style>
