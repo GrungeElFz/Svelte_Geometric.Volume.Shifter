@@ -5,6 +5,7 @@
 </script>
 
 <div class="scene">
+	<!-- Object -->
 	<Threlte.Canvas>
 		<Threlte.PerspectiveCamera position={{ x: 20, y: 20, z: 20 }} fov={50}>
 			<Threlte.OrbitControls />
@@ -18,6 +19,7 @@
 		/>
 	</Threlte.Canvas>
 
+	<!-- Background -->
 	<slot />
 </div>
 
