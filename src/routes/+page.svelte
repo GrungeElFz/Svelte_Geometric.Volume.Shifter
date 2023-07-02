@@ -5,16 +5,17 @@
 </script>
 
 <div class="scene">
-	<!-- Object -->
 	<Threlte.Canvas>
+		<!-- Camera -->
 		<Threlte.PerspectiveCamera position={{ x: 20, y: 20, z: 20 }} fov={50}>
 			<Threlte.OrbitControls />
 		</Threlte.PerspectiveCamera>
 
+		<!-- Lights -->
 		<Threlte.AmbientLight color="white" intensity={0.2} />
-
 		<Threlte.DirectionalLight color="white" intensity={2} position={{ x: 10, y: 20 }} />
 
+		<!-- Object -->
 		<Threlte.Mesh
 			geometry={new Three.SphereGeometry(4, 64, 64)}
 			material={new Three.MeshStandardMaterial({ color: 'white' })}
