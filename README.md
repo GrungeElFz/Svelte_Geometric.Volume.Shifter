@@ -4,6 +4,16 @@
 
 A declarative `Three.JS` with interactive GUI experience | Built by Svelte.
 
+## Lighthouse Scores
+
+![Lighthouse Scores](static/Banner-Svelte_Geometric.Shifter_Lighthouse.png)
+
+- 🟢 Performance: 100
+- 🟠 Accessibility: 76
+- 🟢 Best Practices: 100
+- 🟢 SEO: 100
+- ⚫️ Progressive Web App: N/A
+
 ## Demo
 
 View a live demo of the [Geometric Volume Shifter](https:/svelte-geometric-volume-shifter.vercel.app) alpha version.
