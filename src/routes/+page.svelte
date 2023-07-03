@@ -8,7 +8,7 @@
 </script>
 
 <div class="scene">
-	<Threlte.Canvas>
+	<Threlte.Canvas rendererParameters={{ antialias: true }}>
 		<!-- Helper -->
 		<Threlte.Object3DInstance object={gridHelper} />
 		<Threlte.Object3DInstance object={axesHelper} />
