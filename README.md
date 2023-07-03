@@ -4,7 +4,7 @@
 
 ## Demo
 
-View a live demo of the [Geometric Volume Shifter](https:/svelte-geometric-volume-shifter.vercel.app).
+View a live demo of the [Geometric Volume Shifter](https:/svelte-geometric-volume-shifter.vercel.app) alpha version.
 
 ## Tech Stack
 
