@@ -9,13 +9,20 @@
 	const gridHelper = new Three.GridHelper(20, 20);
 	const axesHelper = new Three.AxesHelper(10);
 
-	if (browser) {
-		const pane = new Pane({ title: 'Scene' });
-	}
-
 	const sphere = {
 		position: { x: 0, y: 4, z: 0 }
 	};
+
+	if (browser) {
+		const pane = new Pane({ title: 'Scene' });
+
+		const sphereControls = pane.addFolder({ title: 'Sphere' });
+
+		sphereControls.addInput(sphere, 'position');
+		sphereControls.on('change', ({ value }) => {
+			sphere.position = value as any;
+		});
+	}
 </script>
 
 <div class="scene">
