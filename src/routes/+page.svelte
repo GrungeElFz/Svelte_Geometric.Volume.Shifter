@@ -15,15 +15,19 @@
 	};
 
 	if (browser) {
+		// Pane
 		const pane = new Pane({ title: 'Scene' });
 
+		// Pane: Folder
 		const sphereControls = pane.addFolder({ title: 'Sphere' });
 
+		// Pane: Position
 		sphereControls.addInput(sphere, 'position');
 		sphereControls.on('change', ({ value }) => {
 			sphere.position = value as any;
 		});
 
+		// Pane: Color Picker
 		sphereControls.addInput(sphere, 'color', {
 			picker: 'inline',
 			expanded: true
