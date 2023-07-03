@@ -57,7 +57,7 @@ const config: UserConfig = {
 export default config;
 ```
 
-This configuration is to prevent `three` and `troika-three-text` dependencies from being externalized for server-side rendering by Vite
+This configuration prevents `three` and `troika-three-text` dependencies from being externalized for server-side rendering by Vite
 
 ## Running Locally
 
