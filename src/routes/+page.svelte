@@ -43,7 +43,7 @@
 			intensity={2}
 			position={{ x: 10, y: 20 }}
 			shadow={{
-				camera: { top: 10 }
+				camera: { top: 10, bottom: -10, left: -10, right: 10, near: 0.1, far: 100 }
 			}}
 		/>
 
