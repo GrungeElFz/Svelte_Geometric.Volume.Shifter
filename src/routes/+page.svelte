@@ -11,7 +11,7 @@
 
 	const sphere = {
 		position: { x: 0, y: 4, z: 0 },
-		color: 0xffffff
+		color: '0xffffff'
 	};
 
 	if (browser) {
@@ -24,7 +24,10 @@
 			sphere.position = value as any;
 		});
 
-		sphereControls.addInput(sphere, 'color');
+		sphereControls.addInput(sphere, 'color', {
+			picker: 'inline',
+			expanded: true
+		});
 		sphereControls.on('change', ({ value }) => {
 			sphere.color = value as any;
 		});
