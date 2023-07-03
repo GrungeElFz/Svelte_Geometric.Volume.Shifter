@@ -14,6 +14,12 @@
 		color: '0xffffff'
 	};
 
+	function updateSpherePosition() {
+		sphere.position.x = Math.round(sphere.position.x);
+		sphere.position.y = Math.round(sphere.position.y);
+		sphere.position.z = Math.round(sphere.position.z);
+	}
+
 	if (browser) {
 		// Pane
 		const pane = new Pane({ title: 'Scene' });
@@ -21,10 +27,31 @@
 		// Pane: Folder
 		const sphereControls = pane.addFolder({ title: 'Sphere' });
 
-		// Pane: Position
-		sphereControls.addInput(sphere, 'position');
-		sphereControls.on('change', ({ value }) => {
-			sphere.position = value as any;
+		// Pane: X Slider
+		sphereControls.addInput(sphere.position, 'x', {
+			min: 0,
+			max: 100
+		});
+		sphereControls.on('change', () => {
+			updateSpherePosition();
+		});
+
+		// Pane: Y Slider
+		sphereControls.addInput(sphere.position, 'y', {
+			min: 0,
+			max: 100
+		});
+		sphereControls.on('change', () => {
+			updateSpherePosition();
+		});
+
+		// Pane: Z Slider
+		sphereControls.addInput(sphere.position, 'z', {
+			min: 0,
+			max: 100
+		});
+		sphereControls.on('change', () => {
+			updateSpherePosition();
 		});
 
 		// Pane: Color Picker
