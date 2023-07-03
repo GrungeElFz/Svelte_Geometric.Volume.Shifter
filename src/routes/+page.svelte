@@ -6,9 +6,6 @@
 	import * as Three from 'three';
 	import * as Utils from 'three/src/math/MathUtils';
 
-	const gridHelper = new Three.GridHelper(20, 20);
-	const axesHelper = new Three.AxesHelper(10);
-
 	const sphere = {
 		position: { x: 0, y: 4, z: 0 },
 		color: '0xffffff'
@@ -22,10 +19,28 @@
 		rotate: true
 	};
 
+	const helpers = {
+		gridHelper: {
+			size: 20,
+			divisions: 20
+		},
+		axesHelper: {
+			size: 10
+		}
+	};
+
+	$: gridHelper = new Three.GridHelper(helpers.gridHelper.size, helpers.gridHelper.divisions);
+	$: axesHelper = new Three.AxesHelper(helpers.axesHelper.size);
+
 	function updateSpherePosition() {
 		sphere.position.x = Math.round(sphere.position.x);
 		sphere.position.y = Math.round(sphere.position.y);
 		sphere.position.z = Math.round(sphere.position.z);
+	}
+
+	function updateHelper() {
+		helpers.gridHelper.size = Math.round(helpers.gridHelper.size);
+		helpers.gridHelper.divisions = Math.round(helpers.gridHelper.divisions);
 	}
 
 	if (browser) {
@@ -40,6 +55,41 @@
 		rotateControls.on('change', ({ value }) => {
 			autoRotate.rotate = value as boolean;
 		});
+
+		// Pane: ------------------ Helpers ------------------
+		const helperControls = pane.addTab({
+			pages: [{ title: 'Grid' }, { title: 'Axes' }]
+		});
+
+		// Helper: Grid Size
+		helperControls.pages[0]
+			.addInput(helpers.gridHelper, 'size', {
+				min: 0,
+				max: 50
+			})
+			.on('change', ({ value }) => {
+				updateHelper();
+			});
+
+		// Helper: Grid Divisions
+		helperControls.pages[0]
+			.addInput(helpers.gridHelper, 'divisions', {
+				min: 0,
+				max: 50
+			})
+			.on('change', ({ value }) => {
+				updateHelper();
+			});
+
+		// Helper: Axes Size
+		helperControls.pages[1]
+			.addInput(helpers.axesHelper, 'size', {
+				min: 0,
+				max: 30
+			})
+			.on('change', ({ value }) => {
+				updateHelper();
+			});
 
 		// Pane: ------------------ Sphere ------------------
 		const sphereControls = pane.addFolder({ title: 'Sphere' });
