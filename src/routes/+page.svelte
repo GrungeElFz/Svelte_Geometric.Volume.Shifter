@@ -64,6 +64,7 @@
 		// Helper: Grid Size
 		helperControls.pages[0]
 			.addInput(helpers.gridHelper, 'size', {
+				step: 1,
 				min: 0,
 				max: 50
 			})
@@ -74,6 +75,7 @@
 		// Helper: Grid Divisions
 		helperControls.pages[0]
 			.addInput(helpers.gridHelper, 'divisions', {
+				step: 1,
 				min: 0,
 				max: 50
 			})
@@ -84,6 +86,7 @@
 		// Helper: Axes Size
 		helperControls.pages[1]
 			.addInput(helpers.axesHelper, 'size', {
+				step: 1,
 				min: 0,
 				max: 30
 			})
@@ -96,6 +99,7 @@
 
 		// Sphere: X Slider
 		sphereControls.addInput(sphere.position, 'x', {
+			step: 1,
 			min: -20,
 			max: 20
 		});
@@ -105,6 +109,7 @@
 
 		// Sphere: Y Slider
 		sphereControls.addInput(sphere.position, 'y', {
+			step: 1,
 			min: -20,
 			max: 20
 		});
@@ -114,6 +119,7 @@
 
 		// Sphere: Z Slider
 		sphereControls.addInput(sphere.position, 'z', {
+			step: 1,
 			min: -20,
 			max: 20
 		});
