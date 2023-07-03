@@ -25,14 +25,13 @@
 	}
 
 	if (browser) {
-		// Pane
+		// Pane: ------------------ Scene ------------------
 		const pane = new Pane({ title: 'Scene' });
 
-		// Pane: Folder
+		// Pane: ------------------ Sphere ------------------
 		const sphereControls = pane.addFolder({ title: 'Sphere' });
-		const floorControls = pane.addFolder({ title: 'Floor' });
 
-		// Pane: X Slider
+		// Sphere: X Slider
 		sphereControls.addInput(sphere.position, 'x', {
 			min: -20,
 			max: 20
@@ -41,7 +40,7 @@
 			updateSpherePosition();
 		});
 
-		// Pane: Y Slider
+		// Sphere: Y Slider
 		sphereControls.addInput(sphere.position, 'y', {
 			min: -20,
 			max: 20
@@ -50,7 +49,7 @@
 			updateSpherePosition();
 		});
 
-		// Pane: Z Slider
+		// Sphere: Z Slider
 		sphereControls.addInput(sphere.position, 'z', {
 			min: -20,
 			max: 20
@@ -59,7 +58,7 @@
 			updateSpherePosition();
 		});
 
-		// Pane: Color Picker
+		// Sphere: Color Picker
 		sphereControls.addInput(sphere, 'color', {
 			picker: 'inline',
 			expanded: true
@@ -68,7 +67,10 @@
 			sphere.color = value as any;
 		});
 
-		// Pane: Floor
+		// Pane: ------------------ Floor ------------------
+		const floorControls = pane.addFolder({ title: 'Floor' });
+
+		// Floor: Color Floor
 		floorControls.addInput(floor, 'color', {
 			picker: 'inline',
 			expanded: true
