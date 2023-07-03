@@ -1,10 +1,21 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { Pane } from 'tweakpane';
+
 	import * as Threlte from '@threlte/core';
 	import * as Three from 'three';
 	import * as Utils from 'three/src/math/MathUtils';
 
 	const gridHelper = new Three.GridHelper(20, 20);
 	const axesHelper = new Three.AxesHelper(10);
+
+	if (browser) {
+		const pane = new Pane({ title: 'Scene' });
+	}
+
+	const sphere = {
+		position: { x: 0, y: 4, z: 0 }
+	};
 </script>
 
 <div class="scene">
@@ -33,7 +44,7 @@
 		<Threlte.Mesh
 			geometry={new Three.SphereGeometry(4, 64, 64)}
 			material={new Three.MeshStandardMaterial({ color: 'white' })}
-			position={{ y: 4 }}
+			position={sphere.position}
 			receiveShadow
 			castShadow
 		/>
