@@ -102,7 +102,7 @@
 
 		<!-- Camera -->
 		<Threlte.PerspectiveCamera position={{ x: 20, y: 20, z: 20 }} fov={50}>
-			<Threlte.OrbitControls {autoRotate} />
+			<Threlte.OrbitControls autoRotate={autoRotate.rotate} />
 		</Threlte.PerspectiveCamera>
 
 		<!-- Lights -->
