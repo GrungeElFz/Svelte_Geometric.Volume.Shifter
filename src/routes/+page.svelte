@@ -29,8 +29,8 @@
 
 		// Pane: X Slider
 		sphereControls.addInput(sphere.position, 'x', {
-			min: 0,
-			max: 100
+			min: -20,
+			max: 20
 		});
 		sphereControls.on('change', () => {
 			updateSpherePosition();
@@ -38,8 +38,8 @@
 
 		// Pane: Y Slider
 		sphereControls.addInput(sphere.position, 'y', {
-			min: 0,
-			max: 100
+			min: -20,
+			max: 20
 		});
 		sphereControls.on('change', () => {
 			updateSpherePosition();
@@ -47,8 +47,8 @@
 
 		// Pane: Z Slider
 		sphereControls.addInput(sphere.position, 'z', {
-			min: 0,
-			max: 100
+			min: -20,
+			max: 20
 		});
 		sphereControls.on('change', () => {
 			updateSpherePosition();
