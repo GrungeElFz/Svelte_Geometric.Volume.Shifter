@@ -53,7 +53,7 @@
 			}}
 		/>
 
-		<!-- Object -->
+		<!-- Sphere -->
 		<Threlte.Mesh
 			geometry={new Three.SphereGeometry(4, 64, 64)}
 			material={new Three.MeshStandardMaterial({ color: sphere.color })}
