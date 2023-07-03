@@ -2,10 +2,17 @@
 	import * as Threlte from '@threlte/core';
 	import * as Three from 'three';
 	import * as Utils from 'three/src/math/MathUtils';
+
+	const gridHelper = new Three.GridHelper(20, 20);
+	const axesHelper = new Three.AxesHelper(10);
 </script>
 
 <div class="scene">
 	<Threlte.Canvas>
+		<!-- Helper -->
+		<Threlte.Object3DInstance object={gridHelper} />
+		<Threlte.Object3DInstance object={axesHelper} />
+
 		<!-- Camera -->
 		<Threlte.PerspectiveCamera position={{ x: 20, y: 20, z: 20 }} fov={50}>
 			<Threlte.OrbitControls autoRotate />
