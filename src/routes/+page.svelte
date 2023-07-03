@@ -18,6 +18,10 @@
 		color: '0xffffff'
 	};
 
+	const autoRotate = {
+		rotate: true
+	};
+
 	function updateSpherePosition() {
 		sphere.position.x = Math.round(sphere.position.x);
 		sphere.position.y = Math.round(sphere.position.y);
@@ -27,6 +31,15 @@
 	if (browser) {
 		// Pane: ------------------ Scene ------------------
 		const pane = new Pane({ title: 'Scene' });
+
+		// Pane: ------------------ Rotate ------------------
+		const rotateControls = pane.addFolder({ title: 'Auto Rotate' });
+
+		// Rotate: Auto Rotate
+		rotateControls.addInput(autoRotate, 'rotate');
+		rotateControls.on('change', ({ value }) => {
+			autoRotate.rotate = value as boolean;
+		});
 
 		// Pane: ------------------ Sphere ------------------
 		const sphereControls = pane.addFolder({ title: 'Sphere' });
@@ -89,7 +102,7 @@
 
 		<!-- Camera -->
 		<Threlte.PerspectiveCamera position={{ x: 20, y: 20, z: 20 }} fov={50}>
-			<Threlte.OrbitControls autoRotate />
+			<Threlte.OrbitControls {autoRotate} />
 		</Threlte.PerspectiveCamera>
 
 		<!-- Lights -->
