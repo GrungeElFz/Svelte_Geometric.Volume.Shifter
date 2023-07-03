@@ -14,6 +14,10 @@
 		color: '0xffffff'
 	};
 
+	const floor = {
+		color: '0xffffff'
+	};
+
 	function updateSpherePosition() {
 		sphere.position.x = Math.round(sphere.position.x);
 		sphere.position.y = Math.round(sphere.position.y);
@@ -26,6 +30,7 @@
 
 		// Pane: Folder
 		const sphereControls = pane.addFolder({ title: 'Sphere' });
+		const floorControls = pane.addFolder({ title: 'Floor' });
 
 		// Pane: X Slider
 		sphereControls.addInput(sphere.position, 'x', {
@@ -61,6 +66,15 @@
 		});
 		sphereControls.on('change', ({ value }) => {
 			sphere.color = value as any;
+		});
+
+		// Pane: Floor
+		floorControls.addInput(floor, 'color', {
+			picker: 'inline',
+			expanded: true
+		});
+		floorControls.on('change', ({ value }) => {
+			floor.color = value as any;
 		});
 	}
 </script>
@@ -100,7 +114,7 @@
 		<Threlte.Mesh
 			geometry={new Three.PlaneGeometry(20, 20)}
 			material={new Three.MeshStandardMaterial({
-				color: 'white',
+				color: floor.color,
 				side: Three.DoubleSide
 			})}
 			rotation={{ x: Utils.DEG2RAD * 90 }}
