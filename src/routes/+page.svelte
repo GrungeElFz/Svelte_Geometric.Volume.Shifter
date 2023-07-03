@@ -10,7 +10,8 @@
 	const axesHelper = new Three.AxesHelper(10);
 
 	const sphere = {
-		position: { x: 0, y: 4, z: 0 }
+		position: { x: 0, y: 4, z: 0 },
+		color: 0xffffff
 	};
 
 	if (browser) {
@@ -19,8 +20,13 @@
 		const sphereControls = pane.addFolder({ title: 'Sphere' });
 
 		sphereControls.addInput(sphere, 'position');
+		sphereControls.addInput(sphere, 'color');
+
 		sphereControls.on('change', ({ value }) => {
 			sphere.position = value as any;
+		});
+		sphereControls.on('change', ({ value }) => {
+			sphere.color = value as any;
 		});
 	}
 </script>
@@ -50,7 +56,7 @@
 		<!-- Object -->
 		<Threlte.Mesh
 			geometry={new Three.SphereGeometry(4, 64, 64)}
-			material={new Three.MeshStandardMaterial({ color: 'white' })}
+			material={new Three.MeshStandardMaterial({ color: sphere.color })}
 			position={sphere.position}
 			receiveShadow
 			castShadow
