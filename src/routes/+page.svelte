@@ -32,7 +32,7 @@
 		// Pane: ------------------ Scene ------------------
 		const pane = new Pane({ title: 'Scene' });
 
-		// Pane: ------------------ Rotate ------------------
+		// Pane: ------------------ Auto Rotate ------------------
 		const rotateControls = pane.addFolder({ title: 'Auto Rotate' });
 
 		// Rotate: Auto Rotate
