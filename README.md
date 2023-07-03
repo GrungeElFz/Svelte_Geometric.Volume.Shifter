@@ -86,3 +86,26 @@ This configuration is to prevent `three` and `troika-three-text` dependencies fr
 - `tweakpane`
 
 > Read more about [Tweakpane](https://cocopon.github.io/tweakpane/getting-started/), a compact library for fine-tuning parameters and monitoring value changes.
+
+## Project Structure
+
+```ts
+├── src
+│   ├── components
+│   │   ├── Controller.svelte
+│   │   └── Scene.svelte
+│   └── routes
+│       └── +page.svelte
+│   ├── app.d.ts
+│   ├── app.html
+├── static
+│   ├── Banner-Svelte_Geometric.Shifter.png
+│   ├── cubeicon.png
+│   └── favicon.png
+├── package-lock.json
+├── package.json
+├── README.md
+├── svelte.config.js
+├── tsconfig.json
+└── vite.config.ts
+```
