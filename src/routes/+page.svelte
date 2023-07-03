@@ -20,11 +20,11 @@
 		const sphereControls = pane.addFolder({ title: 'Sphere' });
 
 		sphereControls.addInput(sphere, 'position');
-		sphereControls.addInput(sphere, 'color');
-
 		sphereControls.on('change', ({ value }) => {
 			sphere.position = value as any;
 		});
+
+		sphereControls.addInput(sphere, 'color');
 		sphereControls.on('change', ({ value }) => {
 			sphere.color = value as any;
 		});
