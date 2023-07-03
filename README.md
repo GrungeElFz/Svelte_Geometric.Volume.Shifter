@@ -2,6 +2,8 @@
 
 ![Geometric Volume Shifter](static/Banner-Svelte_Geometric.Shifter.png)
 
+A declarative `Three.JS` with interactive GUI experience | Built by Svelte.
+
 ## Demo
 
 View a live demo of the [Geometric Volume Shifter](https:/svelte-geometric-volume-shifter.vercel.app) alpha version.
