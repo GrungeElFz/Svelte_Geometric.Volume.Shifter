@@ -1,38 +1,88 @@
-# create-svelte
+# Geometric Volume Shifter
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+![Geometric Volume Shifter](static/Banner-Svelte_Geometric.Shifter.png)
+
+## Demo
+
+View a live demo of the [Geometric Volume Shifter](https:/svelte-geometric-volume-shifter.vercel.app).
+
+## Tech Stack
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [Three.JS](https://threejs.org/)
+- [Threlte](https://threlte.xyz/)
+- [Svelte](https://kit.svelte.dev/)
+- [Vite](https://vitejs.dev/guide/)
 
 ## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+#### [Vite](https://kit.svelte.dev/docs/creating-a-project) Initialize
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+```
+npm create svelte@latest Svelte_Geometric.Volume.Shifter
 
-# create a new project in my-app
-npm create svelte@latest my-app
+✅ Skeleton project
+✅ TypeScript syntax
+✅ ESLint for code linting
+✅ Prettier for code formatting
 ```
 
-## Developing
+#### Vite Configuration
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```ts
+// vite.config.ts
 
-```bash
-npm run dev
+import { sveltekit } from '@sveltejs/kit/vite';
+import type { UserConfig } from 'vite';
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+const config: UserConfig = {
+	plugins: [sveltekit()],
+	ssr: {
+		noExternal: ['three', 'troika-three-text']
+	}
+};
+
+export default config;
 ```
 
-## Building
+This configuration is to prevent `three` and `troika-three-text` dependencies from being externalized for server-side rendering by Vite
 
-To create a production version of your app:
+## Running Locally
+
+1. Clone this repository :
 
 ```bash
-npm run build
+> git clone git@github.com:GrungeElFz/Svelte_Geometric.Volume.Shifter.git
+
+> cd Svelte_Geometric.Volume.Shifter
+
+> code .
+
+> npm i
+
+> npm run dev
 ```
 
-You can preview the production build with `npm run preview`.
+---
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Packages
+
+### Threlte Packages
+
+- `@threlte/core`
+- `@threlte/extras`
+- `@threlte/extras`
+
+> Read more about [Threlte packages](https://threlte.xyz/getting-started#installation) and its requirements.
+
+### Three.JS Package
+
+- `three`
+
+> Read more about [Three.JS](https://threejs.org/docs/manual/en/introduction/Installation.html) installation.
+
+### Tweakpane
+
+- `tweakpane`
+
+> Read more about [Tweakpane](https://cocopon.github.io/tweakpane/getting-started/), a compact library for fine-tuning parameters and monitoring value changes.
