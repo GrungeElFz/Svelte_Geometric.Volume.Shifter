@@ -16,7 +16,7 @@ A declarative `Three.JS` with interactive GUI experience | Built by Svelte.
 
 ## Demo
 
-View a live demo of the [Geometric Volume Shifter](https:/svelte-geometric-volume-shifter.vercel.app) alpha version.
+View a live demo of the [Geometric Volume Shifter](https://svelte-geometric-volume-shifter.vercel.app/) alpha version.
 
 ## Tech Stack
 
