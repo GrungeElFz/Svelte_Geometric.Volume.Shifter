@@ -61,7 +61,7 @@ This configuration prevents `three` and `troika-three-text` dependencies from be
 
 ## Running Locally
 
-1. Clone this repository :
+Clone this repository :
 
 ```bash
 > git clone git@github.com:GrungeElFz/Svelte_Geometric.Volume.Shifter.git
